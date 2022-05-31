@@ -1,0 +1,31 @@
+package week3.day2;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class MissingElementInAnArrayUsingCollections {
+
+	public static void main(String[] args) {
+		int[] arr = { 1, 2, 3, 4, 7, 6, 8 };
+		// covert array to List
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		for (int i = 0; i < arr.length; i++) {
+			list.add(arr[i]);
+		}
+		System.out.println(list);
+		Collections.sort(list);
+
+		// Find missing number
+		for (int j = 0; j < list.size(); j++) {
+			Integer num = list.get(j);
+
+			if (num != (j + 1)) {
+				System.out.println(j + 1);
+				break;
+
+			}
+		}
+
+	}
+
+}
